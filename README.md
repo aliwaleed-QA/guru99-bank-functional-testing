@@ -96,10 +96,36 @@ The backend script crashes and returns an unhandled `500 Internal Server Error` 
   <br>
   <img src="Screenshot 2026-08-19 000713.png" alt="Firefox Resend Prompt" width="750">
 </details>
+### `BUG_TX_02`: Blank Confirmation Page on Fund Transfer Submission
+* **Severity:** High (Functional Defect / Missing Transaction Summary)
+* **Priority:** P1
+* **Module:** Transaction Management (Fund Transfer)
+* **Test Case ID:** `TC_TX_03`
+* **Requirement ID:** `F5`
 
+#### Steps to Reproduce:
+1. Log in with valid Manager credentials.
+2. Click **Fund Transfer** from the left navigation menu.
+3. Enter valid Payer Account (`185325`), Payee Account, Amount (`1000`), and Description (`Rent`).
+4. Click **Submit**.
+
+#### Expected Result:
+The system renders a complete transaction receipt table displaying `From Account Number`, `To Account Number`, `Amount`, `Description`, and a generated `Transaction ID`.
+
+#### Actual Result:
+The page navigates to the `Fund Transfer Details` header, but the entire transaction receipt table fails to render, leaving the page body blank.
+
+#### Evidence:
+<details>
+  <summary>📸 <b>Click to expand defect screenshot</b></summary>
+  <br>
+  <img src="Screenshot 2026-08-19 004529.png" alt="Blank Fund Transfer Details" width="800">
+</details>
 ---
 
-## 📂 Repository Artifacts
+## 📁 Repository Artifacts
 * `SRS_guru 99.pdf` — Original software requirements specification.
 * `Screenshot 2026-08-17 232825.png` — Defect evidence for `BUG_AUTH_01`.
 * `Screenshot 2026-08-19 000616.png` & `Screenshot 2026-08-19 000713.png` — Defect evidence for `BUG_ACC_01`.
+* `Screenshot 2026-08-19 003433.png` — Defect evidence for `BUG_TX_01`.
+* `Screenshot 2026-08-19 004529.png` — Defect evidence for `BUG_TX_02`.
